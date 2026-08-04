@@ -56,19 +56,54 @@ database/sass_db.sql
 http://localhost/smart-assignment-submission-system
 ```
 
-## 📸 Screenshots
+## ▶️ Running the Project with XAMPP
 
-Add screenshots here after uploading them.
+### Prerequisites
+- XAMPP (Apache & MySQL)
+- PHP 8.x
+- MySQL
+- Web Browser
 
-Example:
+### Steps
+
+1. Clone or download the repository:
+   ```bash
+   git clone https://github.com/Ptlmohit/smart-assignment-submission-system.git
+   ```
+
+2. Move the project folder to:
+   ```
+   C:\xampp\htdocs\
+   ```
+
+3. Open **XAMPP Control Panel** and start:
+   - Apache
+   - MySQL
+
+4. Import the database:
+   - Open `http://localhost/phpmyadmin`
+   - Create a database (if needed).
+   - Import:
+     ```
+     database/sass_db.sql
+     ```
+
+5. Open the project in your browser:
+   ```
+   http://localhost/smart-assignment-submission-system/
+   ```
+
+## 📂 Project Path
 
 ```
-screenshots/home.png
-screenshots/login.png
-screenshots/student-dashboard.png
-screenshots/admin-dashboard.png
+C:\xampp\htdocs\smart-assignment-submission-system
 ```
 
+## 🌐 Local URL
+
+```
+http://localhost/smart-assignment-submission-system/
+```
 ## 🔮 Future Enhancements
 
 - Email Notifications
