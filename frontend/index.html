@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SASS | Smart Assignment Submission System</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+    }
+
+    #sidebar {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden">
+
+  <nav class="glass border-b border-white/20 fixed w-full top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
+      <div class="flex items-center gap-2">
+        <a href="#home" class="flex items-center gap-2 cursor-pointer group">
+          <div class="bg-blue-600 p-2 rounded-lg group-hover:scale-110 transition-transform">
+            <i data-lucide="graduation-cap" class="text-white w-6 h-6"></i>
+          </div>
+          <span class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+            SASS
+          </span>
+        </a>
+      </div>
+
+      <ul class="hidden lg:flex items-center space-x-8 font-medium">
+        <li><a href="#home" class="hover:text-blue-600 transition">Home</a></li>
+        <li><a href="#features" class="hover:text-blue-600 transition">Features</a></li>
+        <li><a href="#process" class="hover:text-blue-600 transition">How it Works</a></li>
+        <li><a href="#about" class="hover:text-blue-600 transition">About</a></li>
+        <li class="flex gap-4 pl-4 border-l border-slate-200">
+          <button onclick="openSidebar('login')"
+            class="text-blue-600 px-4 py-2 rounded-full border border-blue-600 hover:bg-blue-50 transition">Login</button>
+          <button onclick="openSidebar('signup')"
+            class="bg-blue-600 text-white px-5 py-2 rounded-full shadow-lg shadow-blue-200 hover:scale-105 transition">Get
+            Started</button>
+        </li>
+      </ul>
+
+      <button class="lg:hidden" onclick="toggleMobileMenu()">
+        <i data-lucide="menu" class="w-8 h-8"></i>
+      </button>
+    </div>
+  </nav>
+
+  <section id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10">
+      <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-200/50 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-indigo-200/50 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 text-center" data-aos="zoom-in">
+     
+      <h1 class="text-5xl lg:text-7xl font-extrabold mb-6 tracking-tight">
+        Submit Assignments <br>
+        <span class="text-blue-600">Smarter Not Harder.</span>
+      </h1>
+      <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+        The ultimate digital bridge between students and educators. Automate grading, track progress, and never miss a
+        deadline again.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button onclick="openSidebar('signup')"
+          class="bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-bold shadow-xl hover:bg-blue-700 transition flex items-center justify-center gap-2">
+          Start Your Journey <i data-lucide="arrow-right"></i>
+        </button>
+        <a href="#features"
+          class="bg-white border border-slate-200 text-slate-700 px-8 py-4 rounded-xl text-lg font-bold hover:bg-slate-50 transition">View
+          Features</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl font-bold mb-4">Powerful Features</h2>
+        <p class="text-slate-500 max-w-xl mx-auto">Everything you need to manage academic workflows in one centralized
+          platform.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="feature-card p-8 rounded-2xl bg-slate-50 border border-slate-100 transition duration-300"
+          data-aos="fade-up" data-aos-delay="100">
+          <div class="bg-blue-100 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+            <i data-lucide="upload-cloud" class="text-blue-600 w-8 h-8"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Instant Submission</h3>
+          <p class="text-slate-600">One-click uploads for all file types with instant receipt generation.</p>
+        </div>
+        <div class="feature-card p-8 rounded-2xl bg-slate-50 border border-slate-100 transition duration-300"
+          data-aos="fade-up" data-aos-delay="200">
+          <div class="bg-indigo-100 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+            <i data-lucide="layout" class="text-indigo-600 w-8 h-8"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Smart Dashboard</h3>
+          <p class="text-slate-600">Personalized analytics for students and grading tools for teachers.</p>
+        </div>
+        <div class="feature-card p-8 rounded-2xl bg-slate-50 border border-slate-100 transition duration-300"
+          data-aos="fade-up" data-aos-delay="300">
+          <div class="bg-purple-100 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+            <i data-lucide="bell" class="text-purple-600 w-8 h-8"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">AI Notifications</h3>
+          <p class="text-slate-600">Automated reminders for upcoming deadlines via email and app.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="py-24 bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div data-aos="fade-right">
+          <h2 class="text-4xl font-bold mb-8">How SASS Works</h2>
+          <div class="space-y-8">
+            <div class="flex gap-4">
+              <div class="text-blue-400 font-bold text-2xl">01</div>
+              <div>
+                <h4 class="text-xl font-semibold">Create Account</h4>
+                <p class="text-slate-400">Join as a student or educator in seconds.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="text-blue-400 font-bold text-2xl">02</div>
+              <div>
+                <h4 class="text-xl font-semibold">Upload & Assign</h4>
+                <p class="text-slate-400">Teachers post tasks; students upload solutions.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="text-blue-400 font-bold text-2xl">03</div>
+              <div>
+                <h4 class="text-xl font-semibold">Review & Feedback</h4>
+                <p class="text-slate-400">Grade instantly and share constructive feedback.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative" data-aos="fade-left">
+          <div class="bg-blue-600/20 absolute inset-0 blur-3xl"></div>
+          <img src="../frontend/assets/images/process1.jpg"
+            alt="Dashboard" class="rounded-2xl shadow-2xl relative z-10 hover:scale-120">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="py-24 bg-white relative overflow-hidden">
+    <div class="absolute top-1/2 left-0 -translate-y-1/2 w-64 h-64 bg-blue-50 rounded-full blur-3xl -z-10"></div>
+    
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        
+        <div class="relative" data-aos="fade-right">
+          <div class="grid grid-cols-2 gap-4">
+            <img src="../frontend/assets/images/about1.jpg"
+                 alt="Team working" class="rounded-2xl shadow-lg mt-10">
+            <img src="../frontend/assets/images/about2.jpg" 
+                 alt="Students" class="rounded-2xl shadow-lg">
+          </div>
+          <div class="absolute -bottom-6 -right-6 bg-blue-600 text-white p-8 rounded-2xl shadow-xl hidden md:block">
+            <div class="text-4xl font-bold">100%</div>
+            <div class="text-sm opacity-80">Digital Workflow</div>
+          </div>
+        </div>
+
+        <div data-aos="fade-left">
+          <div class="inline-block px-4 py-2 bg-blue-50 text-blue-600 rounded-lg text-sm font-bold mb-4 uppercase tracking-widest">
+            Our Mission
+          </div>
+          <h2 class="text-4xl font-bold mb-6 tracking-tight">Bridging the Gap Between <span class="text-blue-600">Ambition and Achievement.</span></h2>
+          <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+            SASS was born from a simple observation: the academic world is moving faster than its tools. We created a centralized ecosystem that removes the friction from assignment management.
+          </p>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3">
+              <div class="bg-blue-100 p-1 rounded-full mt-1">
+                <i data-lucide="check" class="w-4 h-4 text-blue-600"></i>
+              </div>
+              <span class="text-slate-700 font-medium">Empowering students with structured task tracking.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="bg-blue-100 p-1 rounded-full mt-1">
+                <i data-lucide="check" class="w-4 h-4 text-blue-600"></i>
+              </div>
+              <span class="text-slate-700 font-medium">Equipping educators with automated grading insights.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="bg-blue-100 p-1 rounded-full mt-1">
+                <i data-lucide="check" class="w-4 h-4 text-blue-600"></i>
+              </div>
+              <span class="text-slate-700 font-medium">Promoting a paperless, eco-friendly campus environment.</span>
+            </li>
+          </ul>
+          <button onclick="openSidebar('signup')" class="group flex items-center gap-2 text-blue-600 font-bold text-lg hover:gap-4 transition-all">
+            Join our community <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </button>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-16">Trusted by Educators</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100" data-aos="flip-left">
+          <div class="flex text-yellow-400 mb-4"><i data-lucide="star"></i><i data-lucide="star"></i><i
+              data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+          <p class="italic text-slate-600 mb-6">"Reduced our paper waste by 90% and streamlined our grading process
+            significantly."</p>
+          <div class="font-bold">Prof. Sarah Jenkins</div>
+          <div class="text-sm text-slate-400">Harvard University</div>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100" data-aos="flip-left"
+          data-aos-delay="100">
+          <div class="flex text-yellow-400 mb-4"><i data-lucide="star"></i><i data-lucide="star"></i><i
+              data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+          <p class="italic text-slate-600 mb-6">"The UI is so intuitive. My students actually enjoy submitting their
+            work now!"</p>
+          <div class="font-bold">Dr. James Miller</div>
+          <div class="text-sm text-slate-400">MIT Faculty</div>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100" data-aos="flip-left"
+          data-aos-delay="200">
+          <div class="flex text-yellow-400 mb-4"><i data-lucide="star"></i><i data-lucide="star"></i><i
+              data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+          <p class="italic text-slate-600 mb-6">"The automated notifications are a lifesaver for busy college students."
+          </p>
+          <div class="font-bold">Alex Rivera</div>
+          <div class="text-sm text-slate-400">Student Body President</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-white border-t py-12">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <div class="text-2xl font-bold text-blue-600 mb-4">SASS</div>
+      <p class="text-slate-500 mb-8">Empowering education through technology.</p>
+      <div class="flex justify-center gap-6 mb-8 text-slate-400">
+        <a href="#" class="hover:text-blue-600"><i data-lucide="twitter"></i></a>
+        <a href="#" class="hover:text-blue-600"><i data-lucide="github"></i></a>
+        <a href="#" class="hover:text-blue-600"><i data-lucide="linkedin"></i></a>
+      </div>
+      <div class="text-sm text-slate-400">© 2026 Smart Assignment Submission System. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <div id="overlay" class="fixed inset-0 hidden bg-slate-900/60 backdrop-blur-sm z-[60]" onclick="closeSidebar()"></div>
+
+  <div id="sidebar"
+    class="fixed top-0 right-0 w-full sm:w-[450px] h-full bg-white shadow-2xl p-8 transform translate-x-full z-[70] overflow-y-auto">
+    <button onclick="closeSidebar()" class="absolute top-6 right-6 p-2 hover:bg-slate-100 rounded-full transition">
+      <i data-lucide="x" class="w-6 h-6"></i>
+    </button>
+    <div id="sidebarContent" class="mt-12"></div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+
+    AOS.init({ duration: 800, once: true });
+    lucide.createIcons();
+
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    const content = document.getElementById('sidebarContent');
+
+    function openSidebar(type) {
+      overlay.classList.remove('hidden');
+      sidebar.classList.remove('translate-x-full');
+
+      if (type === 'login') {
+        content.innerHTML = `
+                    <h2 class="text-3xl font-bold mb-2">Welcome Back</h2>
+                    <p class="text-slate-500 mb-8">Please enter your details to login.</p>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Select Role</label>
+                            <select id="role" class="w-full border border-slate-200 p-3 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none">
+                                <option value="student">Student</option>
+                                <option value="teacher">Teacher</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Email</label>
+                            <input id="email" type="email" class="w-full border border-slate-200 p-3 rounded-xl outline-none focus:ring-2 focus:ring-blue-500" placeholder="name@university.edu">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Password</label>
+                            <input id="password" type="password" class="w-full border border-slate-200 p-3 rounded-xl outline-none focus:ring-2 focus:ring-blue-500" placeholder="••••••••">
+                        </div>
+                        <button onclick="loginUser()" class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-100 mt-4">
+                            Login
+                        </button>
+                        <p class="text-center text-sm text-slate-500 mt-6">Don't have an account? <a href="#" onclick="openSidebar('signup')" class="text-blue-600 font-semibold">Sign up</a></p>
+                    </div>
+                `;
+      } else {
+        content.innerHTML = `
+                    <h2 class="text-3xl font-bold mb-2">Create Account</h2>
+                    <p class="text-slate-500 mb-8">Join the academic revolution today.</p>
+                    <div class="space-y-4">
+                        <select id="regRole" class="w-full border border-slate-200 p-3 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none">
+                            <option value="">Select Role</option>
+                            <option value="student">Student</option>
+                            <option value="teacher">Teacher</option>
+                            <option value="admin">Admin</option>
+                            
+                        </select>
+                        <input id="regName" class="w-full border border-slate-200 p-3 rounded-xl outline-none focus:ring-2 focus:ring-blue-500" placeholder="Full Name">
+                        <input id="regEmail" class="w-full border border-slate-200 p-3 rounded-xl outline-none focus:ring-2 focus:ring-blue-500" placeholder="Email Address">
+                        <input id="regPass" type="password" class="w-full border border-slate-200 p-3 rounded-xl outline-none focus:ring-2 focus:ring-blue-500" placeholder="Create Password">
+                        <button onclick="registerUser()" class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-100 mt-4">
+                            Sign Up
+                        </button>
+                        <p class="text-center text-sm text-slate-500 mt-6">Already have an account? <a href="#" onclick="openSidebar('login')" class="text-blue-600 font-semibold">Login here</a></p>
+
+                    </div>
+                `;
+      }
+    }
+
+    function closeSidebar() {
+      overlay.classList.add('hidden');
+      sidebar.classList.add('translate-x-full');
+    }
+
+    async function registerUser() {
+      const name = document.getElementById("regName").value;
+      const email = document.getElementById("regEmail").value;
+      const password = document.getElementById("regPass").value;
+      const role = document.getElementById("regRole").value;
+
+      if (!name || !email || !password || !role) {
+        alert("Please fill all fields");
+        return;
+      }
+
+
+      const formData = new FormData();
+      formData.append("name", name);
+      formData.append("email", email);
+      formData.append("password", password);
+      formData.append("role", role);
+
+      try {
+        const response = await fetch("../backend/auth/signup.php", {
+          method: "POST",
+          body: formData
+        });
+
+        const result = await response.text();
+
+        if (result.trim() === "Signup successful") {
+          alert("Registration Successful! You can now login.");
+          openSidebar('login');
+        } else {
+          alert(result);
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        alert("An error occurred. Check console.");
+      }
+    }
+
+    document.querySelector('form').addEventListener('submit', function(e) {
+    const password = document.querySelector('input[name="password"]').value;
+    
+    const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
+
+    if (!passwordRegex.test(password)) {
+        e.preventDefault(); 
+        alert("Password must be at least 8 characters long, include one uppercase letter, and one number.");
+    }
+});
+
+    async function loginUser() {
+      const role = document.getElementById("role").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      if (!role || !email || !password) {
+        alert("Please fill all fields");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("role", role);
+      formData.append("email", email);
+      formData.append("password", password);
+
+      try {
+        const response = await fetch("../backend/auth/login.php", {
+          method: "POST",
+          body: formData
+        });
+
+        const result = await response.text();
+
+        if (result.trim() === "success") {
+          alert("Login Successfully")
+          if (role === "student") window.location.href = "../backend/views/student-dashboard.php";
+          else if (role === "teacher") window.location.href = "../backend/views/teacher-dashboard.php";
+          else if (role === "admin") window.location.href = "../backend/views/admin-dashboard.php";
+        } else {
+          alert(result);
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    }
+
+  </script>
+</body>
+
+</html>
