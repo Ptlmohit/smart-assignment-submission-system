@@ -28,7 +28,7 @@ smart-assignment-submission-system/
 ├── backend/
 ├── frontend/
 ├── database/
-├── assets/
+├── screenshots/
 └── README.md
 ```
 
